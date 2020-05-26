@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Symbol</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for i in range(rows - 1, -1, -1) %}
+                    <tr>
+                        <td>{{stocknames[i]}}</td>
+                        <td>{{stocksymbols[i]}}</td>
+                        <td>{{shares[i]}}</td>
+                        <td>{{prices[i]}}</td>
+                        <td>{{totals[i]}}</td>
+                    </tr>
+                {% endfor %}
+                    <tr>
+                        <td><b>CASH</b></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td>{{cash}}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                        <td><b>{{cashtotal}}</b></td>
+                    </tr>
+        </tbody>
+    </table>
+{% endblock %}
